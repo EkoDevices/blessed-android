@@ -1704,6 +1704,13 @@ public class BluetoothPeripheral {
     }
 
     /**
+     * Clears all runnables that have been queued
+     */
+    public void clearCommands() {
+        commandQueue.clear();
+    }
+
+    /**
      * Enqueue a runnable to the command queue
      *
      * @param command a Runnable containg a command
