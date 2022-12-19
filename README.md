@@ -260,6 +260,12 @@ central.disableLogging()
 ```
 ## Installation
 
+To build locally, add the following properties in your project-level `gradle.properties` file:
+- artifactory_username: Your GitHub Username
+- artifactory_password: A personal access token associated with your GitHub account
+
+You will also need to add a `local.properties` file pointing to your Android SDK location
+
 Blessed is available on Jitpack. Modify your gradle file to include the library:
 
 ```groovy

@@ -3,6 +3,8 @@ apply plugin: 'maven-publish'
 
 group = 'com.github.weliem'
 
+apply from: file('publish.gradle')
+
 android {
     compileSdkVersion 33
 
@@ -17,6 +19,8 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        externalNativeBuild {
         }
     }
     compileOptions {
@@ -40,9 +44,9 @@ afterEvaluate {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.github.weliem'
+                groupId = 'com.github.ekodevices'
                 artifactId = 'blessed-android'
-                version = '1.0'
+                version = '1.0.0'
             }
         }
     }
