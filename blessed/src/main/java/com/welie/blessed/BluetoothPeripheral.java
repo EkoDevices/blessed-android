@@ -285,6 +285,7 @@ public class BluetoothPeripheral {
                 @Override
                 public void run() {
                     peripheralCallback.onCharacteristicUpdate(BluetoothPeripheral.this, safeValue, characteristic, GattStatus.SUCCESS);
+                    peripheralCallback.onCharacteristicUpdate(BluetoothPeripheral.this, safeValue, characteristic, GattStatus.SUCCESS, false);
                 }
             });
         }
@@ -309,6 +310,7 @@ public class BluetoothPeripheral {
                 @Override
                 public void run() {
                     peripheralCallback.onCharacteristicUpdate(BluetoothPeripheral.this, safeValue, characteristic, gattStatus);
+                    peripheralCallback.onCharacteristicUpdate(BluetoothPeripheral.this, safeValue, characteristic, gattStatus, true);
                 }
             });
             completedCommand();

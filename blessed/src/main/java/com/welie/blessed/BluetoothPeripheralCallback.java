@@ -63,6 +63,17 @@ public abstract class BluetoothPeripheralCallback {
     public void onCharacteristicUpdate(@NotNull BluetoothPeripheral peripheral, @NotNull byte[] value, @NotNull BluetoothGattCharacteristic characteristic, @NotNull GattStatus status) {}
 
     /**
+     * Callback invoked as the result of a characteristic read operation or notification/indication
+     *
+     * @param peripheral the peripheral
+     * @param value the new value received
+     * @param characteristic the characteristic for which the new value was received
+     * @param status GATT status code
+     * @param read source of update - true if from a read, false if from a notifcation/indication
+     */
+    public void onCharacteristicUpdate(@NotNull BluetoothPeripheral peripheral, @NotNull byte[] value, @NotNull BluetoothGattCharacteristic characteristic, @NotNull GattStatus status, boolean read) {}
+
+    /**
      * Callback invoked as the result of a characteristic write operation.
      *
      * @param peripheral the peripheral
