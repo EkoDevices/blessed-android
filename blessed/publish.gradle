@@ -12,8 +12,16 @@ task sourceJar(type: Jar) {
 publishing {
     repositories {
         maven {
-            name="GithubPackages"
+            name = "EkoDevices"
             url = uri("https://maven.pkg.github.com/ekodevices/internal-eko-android-bluetooth-sdk")
+            credentials {
+                username = "${artifactory_username}"
+                password = "${artifactory_password}"
+            }
+        }
+        maven {
+            name = "EkoPartners"
+            url = uri("https://maven.pkg.github.com/EkoPartners/eko_connect_android")
             credentials {
                 username = "${artifactory_username}"
                 password = "${artifactory_password}"
